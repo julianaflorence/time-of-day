@@ -84,23 +84,34 @@ Night (11pm to 5am)
 
 
 let myDate = new Date();
-let MyCopyright = myDate.getFullYear();
+let myCopyright = myDate.getFullYear();
 let myHour = myDate.getHours();
 let myGreeting = "";
 let myPic = "";
 
-if(myHour < 12){//morning
- //alert("good morning!");
+if(myHour => 5 && myHour > 12){//morning 
+ 
  myGreeting = "Good Morning";
- myColor = "yellow";
+ myColor = "orange";
  myPic = "morning.jpg";
 
-}else{//afternoon
- // alert("good afternoon!");
+} else if(myHour >= 12 && myHour < 18){//afternoon
+ 
  myGreeting = "Good Afternoon!";
- myColor = "orange";
+ myColor = "yellow";
  myPic = "afternoon.jpg";
+
+} else if(myHour >= 18 && myHour < 23){ //evening
+myGreeting = "Good Evening...";
+myColor = "red";
+myPic = "evening.jpg";
+
+} else  {//nighttime
+	myGreeting = "Good Night"
+	myColor = "blue"
+	myPic = "night.jpg"
 }
+
 
 //the pic needs images/ in order to work
 myPic = "images/" + myPic;
